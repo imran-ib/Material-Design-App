@@ -1,9 +1,9 @@
 import Layout from '@/components/Layout';
 
-export default function Home() {
+export default function MobileAppsPage() {
   return (
     <Layout>
-      <h1>Hello</h1>
+      <h1>Mobile Apps</h1>
     </Layout>
   );
 }

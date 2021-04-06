@@ -1,9 +1,9 @@
 import Layout from '@/components/Layout';
 
-export default function Home() {
+export default function RevolutionPage() {
   return (
     <Layout>
-      <h1>Hello</h1>
+      <h1>The Revolution Page</h1>
     </Layout>
   );
 }

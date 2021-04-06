@@ -1,5 +1,11 @@
 import React from 'react';
-import Document, { DocumentContext, Main, NextScript } from 'next/document';
+import Document, {
+  DocumentContext,
+  Main,
+  NextScript,
+  Head,
+  Html,
+} from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import { ServerStyleSheets } from '@material-ui/styles';
 // import theme from '../src/theme';
@@ -36,23 +42,23 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <html lang="en" dir="ltr">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta charSet="utf-8" />
-        <link rel="shortcut icon" href="/static/favicon.png" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        />
+      <Html lang="en" dir="ltr">
+        <Head>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          />
+          <link rel="icon" type="image/x-icon" href="/favicon.png" />
+        </Head>
         <body>
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

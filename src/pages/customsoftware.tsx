@@ -1,9 +1,9 @@
 import Layout from '@/components/Layout';
 
-export default function Home() {
+export default function CustomSoftwarePage() {
   return (
     <Layout>
-      <h1>Hello</h1>
+      <h1>Custom Softwares</h1>
     </Layout>
   );
 }
