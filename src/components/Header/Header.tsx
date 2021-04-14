@@ -1,10 +1,12 @@
 import React, { PropsWithChildren, useEffect, useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import { Button, useScrollTrigger } from '@material-ui/core';
+import { Button, useScrollTrigger, useTheme } from '@material-ui/core';
 import { useStyles } from './HeaderStyles';
 import Link from '../utils/Link';
 import LargeScreenTabs from './LargeScreenTabs';
+import { Desktop, Mobile, Tablet } from '../utils/useMediaQuery';
+import Drawer from './SmallScreenDrawer';
 
 interface Props {
   children: React.ReactElement;
@@ -23,6 +25,8 @@ function ElevationScroll(props: Props) {
 }
 
 const Header = (props: PropsWithChildren<any>) => {
+  const theme = useTheme();
+
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [value, setValue] = useState(0);
   const [selectIndex, setSelectIndex] = useState(0);
@@ -89,15 +93,23 @@ const Header = (props: PropsWithChildren<any>) => {
                 className={classes.logo}
               />
             </Button>
-            <LargeScreenTabs
-              anchorEl={anchorEl}
-              value={value}
-              selectIndex={selectIndex}
-              handleChange={handleChange}
-              handleClick={handleClick}
-              handleClose={handleClose}
-              handleMenuClick={handleMenuClick}
-            />
+            <Desktop>
+              <LargeScreenTabs
+                anchorEl={anchorEl}
+                value={value}
+                selectIndex={selectIndex}
+                handleChange={handleChange}
+                handleClick={handleClick}
+                handleClose={handleClose}
+                handleMenuClick={handleMenuClick}
+              />
+            </Desktop>
+            <Mobile>
+              <Drawer value={value} />
+            </Mobile>
+            <Tablet>
+              <Drawer value={value} />
+            </Tablet>
           </Toolbar>
         </AppBar>
       </ElevationScroll>

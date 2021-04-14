@@ -2,8 +2,6 @@ import { theme } from '@/components/Styles/theme';
 import { ThemeProvider } from '@material-ui/styles';
 import { AppProps } from 'next/app';
 
-// This new comment 
-
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
